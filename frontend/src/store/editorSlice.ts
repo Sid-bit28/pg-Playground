@@ -11,9 +11,11 @@ export interface TableMetaData {
   columns: string[];
 }
 
+export type DbCellValue = string | number | boolean | null;
+
 export interface QueryResult {
   columns: string[] | null;
-  rows: Record<string, any>[] | null;
+  rows: Record<string, DbCellValue>[] | null;
   error: string | null;
   executionTimeMs: number;
 }
